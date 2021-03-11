@@ -4,6 +4,6 @@ channels:
 dependencies:
    - pandas
    - numpy
-   - pip
-   - datetime
-   - calendar
+   - pip:
+       - datetime
+       - calendar
