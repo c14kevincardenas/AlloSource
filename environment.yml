@@ -1,0 +1,8 @@
+name: cs212-environment
+channels:
+  - conda-forge
+dependencies:
+   - pandas
+   - datetime
+   - numpy
+   - calendar
