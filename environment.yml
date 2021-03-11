@@ -3,6 +3,4 @@ channels:
   - conda-forge
 dependencies:
    - pandas
-   - datetime
    - numpy
-   - calendar
