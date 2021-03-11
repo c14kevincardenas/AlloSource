@@ -1,6 +1,9 @@
-name: cs212-environment
+name: allosource
 channels:
-  - conda-forge
+  - defaults
 dependencies:
    - pandas
    - numpy
+   - pip
+   - datetime
+   - calendar
