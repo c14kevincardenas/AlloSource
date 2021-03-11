@@ -6,4 +6,3 @@ dependencies:
    - numpy
    - pip:
        - datetime
-       - calendar
