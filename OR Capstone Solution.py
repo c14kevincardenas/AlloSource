@@ -80,6 +80,9 @@ weekdays = 0
 weekends = 0
 cal = calendar.Calendar()
 hours_in_week = []
+hours_in_week2 = []
+hours_in_week3 = []
+hours_in_week4 = []
 # iterate through weeks in month
 # 12 days for pr1
 # 9 days for pr2
@@ -91,6 +94,7 @@ for week in cal.monthdayscalendar(year, next_month):
         if day != 0 and i >= 5:
             weekends += 1
             hours_in_week.append(32)
+            
         # check if in month and weekday
         elif day!= 0 and i < 5:  
             weekdays += 1
@@ -184,9 +188,10 @@ while len(hours_in_week) > i: # len(dataframe) > 0 and len(dataframe) != last_le
     
     for job in day_jobs:
         name = job[1]
+        print(dataframe[dataframe['Work ID']==name])
         dataframe.drop(dataframe[dataframe['Work ID']==name].index, inplace = True)
     
     print(len(dataframe))
     print("finished day: " + str(i))
-
+    
 print(dataframe)
