@@ -81,6 +81,10 @@ weekends = 0
 cal = calendar.Calendar()
 hours_in_week = []
 # iterate through weeks in month
+# 12 days for pr1
+# 9 days for pr2
+# 3 days for pr3
+# 3 days for pr 4
 for week in cal.monthdayscalendar(year, next_month):
     for i, day in enumerate(week):
         # check if in month and weekend
@@ -96,9 +100,12 @@ tot_man_hrs_4_guys = weekdays * 64 + weekends * 36
 tot_man_hrs_5_guys = weekdays * 80 + weekends * 45
 
 
-
+df1 = df.loc[df['Priority Number'] == 1]
+df2 = df.loc[df['Priority Number'] == 2]
+df3 = df.loc[df['Priority Number'] == 3]
+df4 = df.loc[df['Priority Number'] == 4]
 #dataframe = next_month_mx.loc[next_month_mx['Priority Number']==1,['Asset ID','Work ID', 'Asset Description', 'Event Name', 'mx time', 'mx_due_date', 'Avg Duration', 'Priority Number']].sort_values('Priority Number')
-dataframe = df.copy()
+dataframe = df1[['Asset ID','Work ID', 'Asset Description', 'Event Name', 'mx time', 'mx_due_date', 'Avg Duration', 'Priority Number', 'KPR']]
 
 
 # Python3 code for Dynamic Programming 
@@ -154,7 +161,8 @@ def printknapSack(W, wt, val, n, day_jobs):
 
 i =0 
 last_len = 0
-while len(dataframe) > 0 and len(dataframe) != last_len :
+W = hours_in_week[i] * 1000
+while len(hours_in_week) > i: # len(dataframe) > 0 and len(dataframe) != last_len or 
     last_len = len(dataframe)
     i +=1
     day_jobs = []
